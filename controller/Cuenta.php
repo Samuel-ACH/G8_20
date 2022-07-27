@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     switch ($_GET["opc"]) {
 
      case "GetCuenta":
-        $datos = $cuentas->get_cuetas();
+        $datos = $cuentas->get_cuentas();
         echo json_encode($datos);
      break;
 
