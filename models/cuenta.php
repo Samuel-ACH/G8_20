@@ -1,5 +1,5 @@
 <?php
- class Cuenta extends conectar {
+ class Cuenta extends Conectar {
     
     public  function get_cuenta() {
         $conectar = parent::Conexion();
