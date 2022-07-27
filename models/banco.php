@@ -1,20 +1,18 @@
 <?php
- class Banco extends conectar {
+ class Banco extends Conectar {
     
-    public  function get_bancos() {
-        $conectar = parent::Conexion();
+    public  function get_banco() {
+        $conectar = parent::conexion();
         parent::set_names();
-
         $sql = "SELECT * from banco";
         $sql = $conectar->prepare($sql);
         $sql ->execute();
         return $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
     }
 
-    public function get_banco($codigo_banco){
-        $conectar = parent::Conexion();
+    public function get_bancos($codigo_banco){
+        $conectar = parent::conexion();
         parent::set_names();
-    
         $sql = "SELECT * from banco WHERE codigo_banco = ?";
         $sql=$conectar->prepare($sql);
         $sql->bindValue(1, $codigo_banco);
@@ -24,12 +22,10 @@
     
 
     public function insert_banco($codigo_banco,$nombre_banco,$oficina_principal,$cantidad_sucursales,$pais,$fechafundacion,$RTN){
-        $conectar= parent::Conexion();
+        $conectar= parent::conexion();
         parent::set_names();
-
         $sql ="INSERT INTO banco (codigo_banco,nombre_banco,oficina_principal,cantidad_sucursales,pais,fechafundacion,RTN)
         VALUES (?, ?, ?, ?, ?, ?, ?);";
-
         $sql=$conectar->prepare($sql);
         $sql->bindValue(1,$codigo_banco);
         $sql->bindValue(2,$nombre_banco);
@@ -43,7 +39,7 @@
     }
 
     public function update_banco($codigo_banco,$nombre_banco,$oficina_principal,$cantidad_sucursales,$pais,$fechafundacion,$RTN){
-        $conectar= parent::Conexion();
+        $conectar= parent::conexion();
         parent::set_names();
         
         $sql="UPDATE banco SET codigo_banco=?,nombre_banco=?,oficina_principal=?,cantidad_sucursales=?,pais=?,fechafundacion=?,RTN=?
@@ -62,7 +58,7 @@
     }
 
     public function delete_banco($codigo_banco){
-        $conectar= parent::Conexion();
+        $conectar= parent::conexion();
         parent::set_names();
         $sql="DELETE FROM banco WHERE codigo_banco = $codigo_banco;";
         $sql=$conectar->prepare($sql);

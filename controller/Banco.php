@@ -7,16 +7,13 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Content-Length: 0');
     header('Content-Type: text/plain');
     die();
-}
+    }
 
-header('Access-Control-Allow-Origin: *');  
-    header('Content-Type: application/json');
-    
-    require_once("../../config/conexion.php");
+    header('Access-Control-Allow-Origin: *');  
+    header('Content-Type: application/json');   
+    require_once("../config/conexion.php");
     require_once("../models/banco.php");
-
     $bancos = new Bancos();
-
     $body = json_decode(file_get_contents("php://input"),true);
     
     switch ($_GET["opc"]) {
