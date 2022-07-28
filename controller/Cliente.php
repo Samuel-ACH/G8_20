@@ -40,6 +40,7 @@
         case "UpdateCliente":
             $datos = $clientes->update_cliente($body["NumeroCliente"],$body["Nombres"],$body["Apellidos"],$body["RTN"],$body["FechaAfiliacion"],$body["SaldoActual"],$body["NumeroCuenta"]);
             print "Cliente Actualizado con exito!";
+            echo json_encode($datos);
                 break;
 
         case "DeleteCliente":

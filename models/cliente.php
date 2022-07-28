@@ -40,7 +40,7 @@
         function update_cliente($NumeroCliente, $Nombres, $Apellidos, $RTN, $FechaAfilicacion, $SaldoActual, $NumeroCuenta){
             $conectar = parent::Conexion();
             parent::set_names();
-            $sql = "UPDATE cliente SET NumeroCliente = ?, Nombres = ?,Apellidos = ?, FRTN= ? ,FechaAfiliacion = ? , SaldoActual = ? , NumeroCuenta = ?
+            $sql = "UPDATE cliente SET NumeroCliente = ?, Nombres = ?,Apellidos = ?, RTN= ?, FechaAfiliacion = ?, SaldoActual = ?, NumeroCuenta = ?
             where NumeroCliente = ?;";
             $sql=$conectar->prepare($sql);
             $sql->bindValue(1, $NumeroCliente);
