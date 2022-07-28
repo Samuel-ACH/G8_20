@@ -1,7 +1,7 @@
 <?php
  class Cuenta extends Conectar {
     
-    public  function get_cuenta() {
+    public  function get_cuentas() {
         $conectar = parent::Conexion();
         parent::set_names();
 

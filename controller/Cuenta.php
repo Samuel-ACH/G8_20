@@ -14,7 +14,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     require_once("../config/conexion.php");
     require_once("../models/cuenta.php");
 
-    $cuentas = new Cuentas();
+    $cuentas = new Cuenta();
 
     $body = json_decode(file_get_contents("php://input"),true);
     
