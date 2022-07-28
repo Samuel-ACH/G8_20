@@ -11,7 +11,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     header('Access-Control-Allow-Origin: *');  
     header('Content-Type: application/json');
     
-    require_once("../../config/conexion.php");
+    require_once("../config/conexion.php");
     require_once("../models/cuenta.php");
 
     $cuentas = new Cuentas();
@@ -20,7 +20,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
     
     switch ($_GET["opc"]) {
 
-     case "GetCuenta":
+     case "GetCuentas":
         $datos = $cuentas->get_cuentas();
         echo json_encode($datos);
      break;
