@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             $datos=$cuentas->update_cuenta($body["NumeroDeCuenta"],$body["NombreDeCuenta"], $body["NumeroDeCliente"], $body["FechaDeApertura"],
             $body["SaldoActual"],$body["SaldoRetenido"], $body["TipoMoneda"]);
             print "¡Número de cuenta actualizado exitosamente!";
-            echo json_encode($datos);
+            
     break;
 
     case "DeleteCuenta":

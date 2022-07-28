@@ -46,17 +46,18 @@
         $conectar= parent::Conexion();
         parent::set_names();
         
-        $sql="UPDATE cuenta SET NumeroDeCuenta=?,NombreDeCuenta=?,NumeroDeCliente=?,FechaDeApertura=?,SaldoActual=?,SaldoRetenido=?,TipoMoneda=?
+        $sql="UPDATE cuenta SET NombreDeCuenta=?,NumeroDeCliente=?,FechaDeApertura=?,SaldoActual=?,SaldoRetenido=?,TipoMoneda=?
         WHERE NumeroDeCuenta=?;";
 
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1,$NumeroDeCuenta);
-        $sql->bindValue(2,$NombreDeCuenta);
-        $sql->bindValue(3,$NumeroDeCliente);
-        $sql->bindValue(4,$FechaDeApertura);
-        $sql->bindValue(5,$SaldoActual);
-        $sql->bindValue(6,$SaldoRetenido);
-        $sql->bindValue(7,$TipoMoneda);
+        
+        $sql->bindValue(1,$NombreDeCuenta);
+        $sql->bindValue(2,$NumeroDeCliente);
+        $sql->bindValue(3,$FechaDeApertura);
+        $sql->bindValue(4,$SaldoActual);
+        $sql->bindValue(5,$SaldoRetenido);
+        $sql->bindValue(6,$TipoMoneda);
+        $sql->bindValue(7,$NumeroDeCuenta);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
@@ -66,7 +67,6 @@
         parent::set_names();
         $sql="DELETE FROM cuenta WHERE NumeroDeCuenta = $NumeroDeCuenta;";
         $sql=$conectar->prepare($sql);
-        $sql->bindValue(1, $id);
         $sql->execute();
         return $resultado=$sql->fetchAll(PDO::FETCH_ASSOC);
     }
