@@ -38,7 +38,7 @@
      
                
         case "UpdateCliente":
-            $datos = $clientes->insert_cliente($body["NumeroCliente"],$body["Nombres"],$body["Apellidos"],$body["RTN"],$body["FechaAfiliacion"],$body["SaldoActual"],$body["NumeroCuenta"]);
+            $datos = $clientes->update_cliente($body["NumeroCliente"],$body["Nombres"],$body["Apellidos"],$body["RTN"],$body["FechaAfiliacion"],$body["SaldoActual"],$body["NumeroCuenta"]);
             print "Cliente Actualizado con exito!";
                 break;
 
