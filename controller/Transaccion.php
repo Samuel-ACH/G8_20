@@ -24,7 +24,7 @@
         case "GetTransaccion":
                 $datos = $transacciones->get_transaccion($body["CodigoTransaccion"]);
                 if ($datos == null) {
-                    print "Esta transaccion no existe.";
+                    print "La transaccion no existe.";
                 }else{
                     echo json_encode($datos);
                 }
@@ -32,19 +32,19 @@
              
         case "InsertTransaccion":
             $datos = $transacciones->insert_transaccion($body["CodigoTransaccion"],$body["TipoTransaccion"],$body["CodigoCliente"],$body["FechaTransaccion"],$body["MontoTransaccion"],$body["Sucursal"],$body["NumeroDeCuenta"]);
-            print "Transaccion agregada con exito!";
+            print "Transaccion agregada";
             echo json_encode($datos);
             break;   
      
                
         case "UpdateTransaccion":
                 $datos = $transacciones->update_transaccion($body["CodigoTransaccion"],$body["TipoTransaccion"],$body["CodigoCliente"],$body["FechaTransaccion"],$body["MontoTransaccion"],$body["Sucursal"],$body["NumeroDeCuenta"]);
-                    print "Transaccion actualizada con exito";
+                    print "Transaccion actualizada";
                 break;
 
         case "DeleteTransaccion":
                 $datos = $transacciones->delete_transaccion($body["CodigoTransaccion"]);
-                print "Transaccion eliminada con exito!";
+                print "Transaccion eliminada";
                 break;      
     
             default:
