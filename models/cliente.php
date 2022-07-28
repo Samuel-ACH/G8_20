@@ -37,7 +37,7 @@
             return $resultado = $sql->fetchAll(PDO::FETCH_ASSOC);
         }
 
-        function update_clientes($NumeroCliente, $Nombres, $Apellidos, $RTN, $FechaAfilicacion, $SaldoActual, $NumeroCuenta){
+        function update_cliente($NumeroCliente, $Nombres, $Apellidos, $RTN, $FechaAfilicacion, $SaldoActual, $NumeroCuenta){
             $conectar = parent::Conexion();
             parent::set_names();
             $sql = "UPDATE cliente SET NumeroCliente = ?, Nombres = ?,Apellidos = ?, FRTN= ? ,FechaAfiliacion = ? , SaldoActual = ? , NumeroCuenta = ?
