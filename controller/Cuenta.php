@@ -39,7 +39,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
             $datos=$cuentas->insert_cuenta($body["NumeroDeCuenta"],$body["NombreDeCuenta"], $body["NumeroDeCliente"], $body["FechaDeApertura"],
             $body["SaldoActual"],$body["SaldoRetenido"], $body["TipoMoneda"]);
             print "¡Número de cuenta agregado exitosamente!";
-            echo json_encode($datos);
+            
     break;
 
     case "UpdateCuenta":
@@ -61,3 +61,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'OPTIONS') {
 
     }
 ?>  
+
